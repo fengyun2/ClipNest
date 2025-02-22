@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "ClipNest 图片采集",
+  "version": "1.0",
+  "description": "一键采集网页图片到 ClipNest",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "http://localhost:3000/*"
+  ],
+  "action": {
+    "default_title": "ClipNest 图片采集"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["styles.css"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
