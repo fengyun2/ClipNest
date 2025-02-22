@@ -6,16 +6,25 @@
   "permissions": [
     "activeTab",
     "scripting",
+    "storage",
     "http://localhost:3000/*"
   ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
   "action": {
-    "default_title": "ClipNest 图片采集"
+    "default_title": "ClipNest 图片采集",
+    "default_icon": {
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
   },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
       "css": ["styles.css"],
-      "js": ["content.js"]
+      "js": ["content.js"],
+      "run_at": "document_end"
     }
   ],
   "icons": {
